@@ -1,6 +1,6 @@
 <div class="filters">
     <mat-form-field>
-        <mat-label></mat-label>
+        <mat-label>Sort</mat-label>
         <mat-select
             panelClass="sort-select"
             [(ngModel)]="sort"
@@ -14,4 +14,24 @@
             <mat-option value="metacritic">Metacritic</mat-option>
         </mat-select>
     </mat-form-field>
+    <div class="games">
+        <div class="game">
+             <div class="game-thumb-container">
+                 <img 
+                    src="https://hb.imgix.net/12d1d9ac840e649ca0d749b0e5d8b403d310b10e.jpeg?auto=compress,format&fit=crop&h=353&w=616&s=ea7b42b6e2b1535675ccca94ba8c0b95" 
+                    alt="thumbnail"
+                    class="game-thumbnail"
+                 />
+             </div>
+             <div class="game-description">
+                 <p class="game-name">Name</p>
+                 <div class="game-platforms">
+                   <img
+                    class="game-platform"
+                    src="https://hb.imgix.net/12d1d9ac840e649ca0d749b0e5d8b403d310b10e.jpeg?auto=compress,format&fit=crop&h=353&w=616&s=ea7b42b6e2b1535675ccca94ba8c0b95"
+                    alt="slug">
+                 </div>
+             </div>
+        </div>
+    </div>
 </div>
