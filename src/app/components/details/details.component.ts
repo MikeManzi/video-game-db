@@ -2,14 +2,14 @@ import { HttpService } from './../../services/http.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Game } from './../../models';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent implements OnInit,OnDestroy {
   gameRating = 0;
   gameId: string;
   game: Game;
@@ -50,6 +50,15 @@ export class DetailsComponent implements OnInit {
       return '#f7aa38';
     }else{
       return '#ef4655'
+    }
+  }
+
+  ngOnDestroy(): void {
+    if(this.gameSub) {
+      this.gameSub.unsubscribe();
+    }
+    if(this.routeSub) {
+      this.routeSub.unsubscribe()
     }
   }
 
